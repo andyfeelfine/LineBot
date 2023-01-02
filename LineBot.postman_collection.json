@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "fa4836b1-85c5-409d-a251-16da2e076664",
+		"name": "LineBot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user/getUserPorfile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test getUserPorfile\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.resCode).to.eql(\"000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":\"U71bf079d159071a02ad6e428b0859562\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/getUserPorfile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"getUserPorfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/findUserIDByName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test findUserIDByName\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.resCode).to.eql(\"000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"displayName\":\"Andyhuang\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/findUserIDByName",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"findUserIDByName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "message/findMessageByUserId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test findMessageByUserId\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.resCode).to.eql(\"000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":\"U71bf079d159071a02ad6e428b0859562\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/message/findMessageByUserId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						"findMessageByUserId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "message/pushMessageTo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test pushMessageTo\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.resCode).to.eql(\"000\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"to\":\"U71bf079d159071a02ad6e428b0859562\",\"message\":\"xxwwwxx\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/message/pushMessageTo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						"pushMessageTo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "ngrok",
+			"value": "https://087e-220-132-86-181.jp.ngrok.io/callback"
+		}
+	]
+}
